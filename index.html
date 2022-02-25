@@ -50,19 +50,17 @@
         </ul>
       </nav>
       <div class="nav-user">
-        <button class="btn">Cart</button>
-        <img src="" alt="Avatar" />
+        <button class="btn btn--card"></button>
+        <img src="./images/image-avatar.png" alt="Avatar" />
       </div>
     </header>
 
     <main>
-      <div class="main-carousel">
+      <section class="main-carousel">
 
         <div class="carousel">
 
-          <button class="btn carousel__button carousel__button--left hidden">
-            <img src="./images/icon-previous.svg" alt="" />
-          </button>
+          <button class="btn carousel__button carousel__button--left hidden"></button>
 
           <div class="carousel__track-container">
             <ul class="carousel__track">
@@ -81,9 +79,7 @@
             </ul>
           </div>
 
-          <button class="btn carousel__button carousel__button--right">
-            <img src="./images/icon-next.svg" alt="" />
-          </button>
+          <button class="btn carousel__button carousel__button--right"></button>
 
           <div class="carousel__nav">
 
@@ -105,22 +101,50 @@
           </div>
         </div>
 
-      </div>
+      </section>
 
-      <div class="main-info">
-        <h2>Sneaker Company</h2>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>
+      <section class="main-info">
+        
+        <div>
+          <p class="main__brand">Sneaker Company</p>
+          <h1 class="main__title">Fall Limited Edition Sneakers</h1>
+        </div>
+        
+        <p class="main__desc">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
         </p>
-        <div>$125.00 50% $250.00</div>
-        <div>
-          <div>0</div>
-          <button>Add to cart</button>
+        
+        <div class="main__shop">
+          
+          <div class="main__price">
+            
+            <p>
+              $125.00 
+            </p>
+
+            <span class="main__price--discount">
+              50%
+            </span> 
+
+          </div>
+
+          <span class="main__real">
+            $250.00
+          </span>
+
         </div>
-      </div>
+        
+        <div class="main__buy">
+          <div class="buy__controls">
+            <button class="btn btn--minus"></button>
+            <input id="" type="number" name="" value="0" min="0">
+            <button class="btn btn--plus"></button>
+          </div>
+          <button class="btn btn--buy">Add to cart</button>
+        </div>
+      </section>
     </main>
 
     <div class="attribution">
