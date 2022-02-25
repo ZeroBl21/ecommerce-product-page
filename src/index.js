@@ -99,3 +99,21 @@ dotsNav.addEventListener('click', e => {
     updateNav(currentImg, targetImg);
     hideShowArrows(slides, prevBtn, nextBtn, targetIndex);
 })
+
+// shop
+
+const quantity = document.querySelector('#quantity');
+const plus = document.querySelector('.btn--plus');
+const minus = document.querySelector('.btn--minus');
+
+
+plus.addEventListener('click', () => {
+    if (quantity.value < 0)
+        quantity.value = 0;
+    quantity.value++;
+});
+
+minus.addEventListener('click', () => {
+    if (quantity.value > 0)
+        quantity.value--;
+});
