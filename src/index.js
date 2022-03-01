@@ -1,14 +1,26 @@
-nav = document.querySelector('.principal-nav');
-navToggle = document.querySelector('.nav-toggle');
-
+const hideNavbarMedia = window.matchMedia("(min-width: 40em)")
+const nav = document.querySelector('.principal-nav');
+const navToggle = document.querySelector('.nav-toggle');
+const dark = document.querySelector('.modal__background');
 
 navToggle.addEventListener("click", () => {
     const visibility = nav.getAttribute('data-visible');
 
     if (visibility === "false") {
         nav.setAttribute('data-visible', true);
+        dark.classList.remove('hidden');
     } else {
         nav.setAttribute('data-visible', false);
+        dark.classList.add('hidden');
+    }
+});
+
+hideNavbarMedia.addEventListener("change", () => {
+    const visibility = nav.getAttribute('data-visible');
+
+    if (visibility === "true") {
+        nav.setAttribute('data-visible', false);
+        dark.classList.add('hidden');
     }
 });
 
@@ -116,4 +128,19 @@ plus.addEventListener('click', () => {
 minus.addEventListener('click', () => {
     if (quantity.value > 0)
         quantity.value--;
+});
+
+//
+
+const cart = document.querySelector('.btn--cart');
+const cartContent = document.querySelector('.cart')
+
+cart.addEventListener('click', () => {
+    const visibility = cartContent.getAttribute('data-visible');
+
+    if (visibility === "false") {
+        cartContent.setAttribute('data-visible', true);
+    } else {
+        cartContent.setAttribute('data-visible', false);
+    }
 });

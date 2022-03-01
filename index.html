@@ -50,9 +50,27 @@
         </ul>
       </nav>
       <div class="nav-user">
-        <button class="btn btn--card"></button>
+        <button class="btn btn--cart"></button>
+        <div class="cart" data-visible="false">
+
+          <h4 class="cart__title">Cart</h4>
+          <div class="cart__container">
+            
+            <div class="cart__card">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="cart-item">
+              <div>
+                <p class="card__title">Autumn Limited Edition</p>
+                <p>$125.00 x 3 <span class="card__total">$375.00</span></p>
+              </div>
+              <button class="btn btn--trash"></button>
+            </div>
+          </div>
+
+          <button class="btn btn--buy">Add to cart</button>
+        </div>
         <img src="./images/image-avatar.png" alt="Avatar" />
       </div>
+
     </header>
 
     <main>
@@ -146,6 +164,8 @@
         </div>
       </section>
     </main>
+
+    <div class="modal__background hidden"></div>
 
     <div class="attribution">
       Challenge by

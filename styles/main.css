@@ -57,6 +57,16 @@ body {
   filter: opacity(0.6);
 }
 
+.modal__background{
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #000a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 /* Header Start */
 
 header {
@@ -92,6 +102,7 @@ header {
   z-index: 1000;
 
   padding: 6rem 2rem;
+  transition: transform .4s ease-in;
   transform: translateX(-100%);
 }
 
@@ -120,6 +131,7 @@ header {
 .nav-user {
   display: flex;
   align-items: center;
+  position: relative;
 
   margin-left: auto;
   padding-right: 2rem;
@@ -130,14 +142,83 @@ header {
   height: 2rem;
 }
 
-.btn--card {
+.btn--cart {
   background-image: url(../images/icon-cart.svg);
   background-size: auto;
   height: 22px;
   padding-right: 4rem;
 }
 
-/* Header Start */
+.cart{
+  display: flex;
+  flex-direction: column;
+  
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  height: 250px;
+  width: min(95vw, 350px);
+  padding: 1.3rem;
+  
+  background: #fff;
+  z-index: 200;
+  border-radius: .5rem;
+
+  transform: translateY(-150%);
+  transition: transform .4s ease-in;
+
+  box-shadow: 0px 10px 15px -10px var(--DarkGrayishBlue);
+  -webkit-box-shadow: 0px 10px 15px -10px var(--DarkGrayishBlue);
+  -moz-box-shadow: 0px 10px 15px -10px var(--DarkGrayishBlue);
+}
+
+.cart[data-visible="true"]{
+    transform: translateY(0);
+}
+
+.cart__title{
+  padding-bottom: 1.3rem;
+  border-bottom: 2px solid var(--LightGrayishBlue);
+}
+
+.cart__container {
+  height: 75%;
+  overflow-y: auto;
+}
+
+.cart__card{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  height: 60px;
+  color: var(--DarkGrayishBlue);
+}
+
+.cart__card img{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.3rem;
+}
+
+.card__title{
+  font-size: 16px;
+}
+
+.card__total{
+  color: var(--Black);
+  font-weight: 700;
+}
+
+.btn--trash{
+  background-image: url('../images/icon-delete.svg');
+  background-size: 15px;
+  padding: 1rem;
+  margin-left: auto;
+}
+
+
+/* Header End */
 
 /* Carousel Start */
 
@@ -292,9 +373,9 @@ header {
   color: var(--White);
   font-weight: 700;
 
-  box-shadow: 0px 16px 45px 40px var(--PaleOrange);
-  -webkit-box-shadow: 0px 16px 45px 40px var(--PaleOrange);
-  -moz-box-shadow: 0px 16px 45px 40px var(--PaleOrange);
+  box-shadow: 0px 16px 30px 10px var(--PaleOrange);
+  -webkit-box-shadow: 0px 16px 30px 10px var(--PaleOrange);
+  -moz-box-shadow: 0px 16px 30px 10px var(--PaleOrange);
 }
 
 .btn--plus {
@@ -304,6 +385,8 @@ header {
 .btn--minus {
   background-image: url(../images/icon-minus.svg);
 }
+
+
 
 /* Main End */
 
