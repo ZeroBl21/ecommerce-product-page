@@ -20,19 +20,10 @@
 
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/desktop.css" media="(min-width: 40em)">
 
     <title>Frontend Mentor | E-commerce product page</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -52,47 +43,56 @@
       <div class="nav-user">
         <button class="btn btn--cart"></button>
         <div class="cart" data-visible="false">
-
           <h4 class="cart__title">Cart</h4>
+          
           <div class="cart__container">
             
-            <div class="cart__card">
-              <img src="./images/image-product-1-thumbnail.jpg" alt="cart-item">
-              <div>
-                <p class="card__title">Autumn Limited Edition</p>
-                <p>$125.00 x 3 <span class="card__total">$375.00</span></p>
-              </div>
-              <button class="btn btn--trash"></button>
-            </div>
+            <p class="card__empty">Your cart is empty.</p>
+            
           </div>
 
-          <button class="btn btn--buy">Add to cart</button>
+          <button id="check" class="btn btn--buy hidden">Checkout</button>
         </div>
-        <img src="./images/image-avatar.png" alt="Avatar" />
+        <img class="user__img" src="./images/image-avatar.png" alt="Avatar" />
       </div>
-
     </header>
 
     <main>
       <section class="main-carousel">
-
         <div class="carousel">
-
-          <button class="btn carousel__button carousel__button--left hidden"></button>
+          <button
+            class="btn carousel__button carousel__button--left hidden"
+          ></button>
 
           <div class="carousel__track-container">
             <ul class="carousel__track">
               <li class="carousel__slide current-slide">
-                <img class="carousel__image" src="./images/image-product-1.jpg" alt="carousel img" />
+                <img
+                  class="carousel__image"
+                  src="./images/image-product-1.jpg"
+                  alt="carousel img"
+                />
               </li>
               <li class="carousel__slide">
-                <img class="carousel__image" src="./images/image-product-2.jpg" alt="carousel img" />
+                <img
+                  class="carousel__image"
+                  src="./images/image-product-2.jpg"
+                  alt="carousel img"
+                />
               </li>
               <li class="carousel__slide">
-                <img class="carousel__image" src="./images/image-product-3.jpg" alt="carousel img" />
+                <img
+                  class="carousel__image"
+                  src="./images/image-product-3.jpg"
+                  alt="carousel img"
+                />
               </li>
               <li class="carousel__slide">
-                <img class="carousel__image" src="./images/image-product-4.jpg" alt="carousel img" />
+                <img
+                  class="carousel__image"
+                  src="./images/image-product-4.jpg"
+                  alt="carousel img"
+                />
               </li>
             </ul>
           </div>
@@ -100,78 +100,58 @@
           <button class="btn carousel__button carousel__button--right"></button>
 
           <div class="carousel__nav">
-
             <button class="btn carousel__indicator current-slide">
-              <img src="./images/image-product-1-thumbnail.jpg" alt="">
-            </button>
-          
-            <button class="btn carousel__indicator">
-              <img src="./images/image-product-2-thumbnail.jpg" alt="">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="" />
             </button>
 
             <button class="btn carousel__indicator">
-              <img src="./images/image-product-3-thumbnail.jpg" alt="">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="" />
             </button>
 
             <button class="btn carousel__indicator">
-              <img src="./images/image-product-4-thumbnail.jpg" alt="">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="" />
+            </button>
+
+            <button class="btn carousel__indicator">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="" />
             </button>
           </div>
         </div>
-
       </section>
 
       <section class="main-info">
-        
         <div>
           <p class="main__brand">Sneaker Company</p>
           <h1 class="main__title">Fall Limited Edition Sneakers</h1>
         </div>
-        
+
         <p class="main__desc">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
         </p>
-        
+
         <div class="main__shop">
-          
           <div class="main__price">
-            
-            <p>
-              $125.00 
-            </p>
+            <p>$125.00</p>
 
-            <span class="main__price--discount">
-              50%
-            </span> 
-
+            <span class="main__price--discount"> 50% </span>
           </div>
 
-          <span class="main__real">
-            $250.00
-          </span>
-
+          <span class="main__real"> $250.00 </span>
         </div>
-        
+
         <div class="main__buy">
           <div class="buy__controls">
             <button class="btn btn--minus"></button>
-            <input id="quantity" type="number" name="" value="0" min="0">
+            <input id="quantity" type="number" name="" value="0" min="0" />
             <button class="btn btn--plus"></button>
           </div>
-          <button class="btn btn--buy">Add to cart</button>
+          <button id="buy" class="btn btn--buy">Add to cart</button>
         </div>
       </section>
     </main>
 
     <div class="modal__background hidden"></div>
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
   </body>
 </html>

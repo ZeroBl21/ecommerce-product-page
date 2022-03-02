@@ -1,3 +1,5 @@
+//#region Nav
+
 const hideNavbarMedia = window.matchMedia("(min-width: 40em)")
 const nav = document.querySelector('.principal-nav');
 const navToggle = document.querySelector('.nav-toggle');
@@ -23,6 +25,11 @@ hideNavbarMedia.addEventListener("change", () => {
         dark.classList.add('hidden');
     }
 });
+
+//#endregion
+
+
+//#region Carousel
 
 //Vars
 
@@ -112,12 +119,15 @@ dotsNav.addEventListener('click', e => {
     hideShowArrows(slides, prevBtn, nextBtn, targetIndex);
 })
 
-// shop
+//#endregion
+
+
+//#region Shop
+
 
 const quantity = document.querySelector('#quantity');
 const plus = document.querySelector('.btn--plus');
 const minus = document.querySelector('.btn--minus');
-
 
 plus.addEventListener('click', () => {
     if (quantity.value < 0)
@@ -131,16 +141,62 @@ minus.addEventListener('click', () => {
 });
 
 //
+const product = {
+    img: './images/image-product-1-thumbnail.jpg',
+    name: "Autumn Limited Edition",
+    price: 250.00,
+    discount: 0.5,
+};
 
+const buy = document.querySelector('#buy');
+const check = document.querySelector('#check');
 const cart = document.querySelector('.btn--cart');
-const cartContent = document.querySelector('.cart')
+const cartShow = document.querySelector('.cart')
+const cartContainer = document.querySelector('.cart__container');
 
 cart.addEventListener('click', () => {
-    const visibility = cartContent.getAttribute('data-visible');
+    const visibility = cartShow.getAttribute('data-visible');
 
     if (visibility === "false") {
-        cartContent.setAttribute('data-visible', true);
+        cartShow.setAttribute('data-visible', true);
     } else {
-        cartContent.setAttribute('data-visible', false);
+        cartShow.setAttribute('data-visible', false);
     }
 });
+
+buy.addEventListener('click', () => {
+    const helper = product.price * product.discount;
+
+    cartContainer.innerHTML = `
+    <div class="cart__card">
+        <img
+            src="${product.img}"
+            alt="cart-item"
+        />
+        <div>
+            <p class="card__title">${product.name}</p>
+            <p>$${helper}.00 x ${quantity.value} <span class="card__total">$${helper * quantity.value}.00</span></p>
+        </div>
+        <button class="btn btn--trash"></button>
+    </div>`;
+
+    if(check.classList.contains('hidden')) check.classList.remove('hidden')
+
+});
+
+cartContainer.addEventListener('click', (e) =>{ 
+    const targetTrash = e.target.closest('button');
+
+    if (!targetTrash) return;
+
+    cartContainer.innerHTML = 
+    `
+        <p class="card__empty">Your cart is empty.</p>
+    `;
+
+    check.classList.add('hidden');
+});
+
+//#endregion
+
+
